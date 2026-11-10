@@ -73,6 +73,17 @@
   .flotante{position:fixed;right:16px;bottom:16px;width:62px;height:62px;border-radius:50%;background:var(--verde);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.28);z-index:10;animation:pulso 2.2s infinite}
   .flotante svg{width:32px;height:32px;fill:#fff}
   @keyframes pulso{0%{box-shadow:0 0 0 0 rgba(31,168,85,.55)}70%{box-shadow:0 0 0 16px rgba(31,168,85,0)}100%{box-shadow:0 0 0 0 rgba(31,168,85,0)}}
+
+  .monto{position:relative;margin:26px 0 20px;max-width:560px;border-radius:20px;padding:3px;background:linear-gradient(120deg,#ffe27a,#ffc93c 45%,#ff9f1c);box-shadow:0 14px 34px rgba(0,0,0,.28)}
+  .monto-in{background:linear-gradient(160deg,#0a3560,#0f4c86);border-radius:17px;padding:20px 24px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+  .monto .bolsa{font-size:2.6rem;line-height:1;filter:drop-shadow(0 4px 6px rgba(0,0,0,.3));animation:flota 3s ease-in-out infinite}
+  .monto .txt small{display:block;font-size:.82rem;letter-spacing:1.4px;text-transform:uppercase;color:#ffe27a;font-weight:600}
+  .monto .cifra{font-size:clamp(2.4rem,9vw,3.6rem);font-weight:800;line-height:1.05;color:#ffc93c;text-shadow:0 3px 0 rgba(0,0,0,.25)}
+  .monto .cifra sub{font-size:.38em;color:#fff;font-weight:600;vertical-align:baseline;margin-left:6px;text-shadow:none}
+  .monto .pie{width:100%;font-size:.8rem;opacity:.85;border-top:1px dashed rgba(255,255,255,.3);padding-top:10px;margin-top:2px}
+  .monto::before{content:"DINERO TUYO";position:absolute;top:-11px;right:18px;background:var(--verde);color:#fff;font-size:.7rem;font-weight:800;letter-spacing:1px;padding:4px 12px;border-radius:999px;box-shadow:0 4px 10px rgba(0,0,0,.25)}
+  @keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  @media(prefers-reduced-motion:reduce){.monto .bolsa{animation:none}}
 </style>
 </head>
 <body>
@@ -81,6 +92,11 @@
   <div class="wrap">
     <div class="marca"><div class="ico">🤝</div>Ayuda Desempleo Jalisco Sur</div>
     <h1>¿Te quedaste sin trabajo? <span>Tu Afore te puede apoyar.</span></h1>
+    <div class="monto"><div class="monto-in">
+      <div class="bolsa">💰</div>
+      <div class="txt"><small>Te ayudamos a conseguir hasta</small><div class="cifra">$28,000<sub>pesos</sub></div></div>
+      <div class="pie">Es ahorro tuyo en tu Afore. Monto máximo según tu saldo y semanas cotizadas.</div>
+    </div></div>
     <p class="sub">Te ayudamos a tramitar tu <strong>retiro parcial por desempleo</strong> de principio a fin. Tú no batallas con filas ni papeleo: nosotros lo hacemos contigo.</p>
     <div class="chips">
       <span class="chip">✅ Revisión gratis</span>
